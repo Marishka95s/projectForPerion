@@ -6,11 +6,8 @@ body {
     font-family: 'Muli', sans-serif;
     /* overflow: hidden; */
     margin: 0 auto;
-    /* background: white; */
-    /* height: 100vh; */
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
+    height: 1050px;
+    width: 2000px;
   }
   .container {
     position: relative;
@@ -21,7 +18,11 @@ body {
   }
 
   .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100vh;
+    width: 100vw;
     background-color: transparent;
   }
   .overlay.is-hidden {
