@@ -8,11 +8,15 @@ body {
     margin: 0 auto;
     height: 1050px;
     width: 2000px;
+    background: #000;
   }
   .container {
-    position: relative;
-    /* background-color: transparent; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
     height: 100vh;
+    width: 100vw;
     display: flex;
     background-size: 100%;
   }
@@ -73,7 +77,17 @@ body {
   .right-emblema {
     z-index: 6;
   }
-
+  .button_main_show{
+    z-index: 7;
+    display: block;
+    position: absolute;
+    border: none;
+    /* background-color: transparent; */
+    left: 0;
+    top: 0;
+    width: 5vw;
+    height: 5vw;
+  }
   .button_main_close {
     z-index: 7;
     display: block;

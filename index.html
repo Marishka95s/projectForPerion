@@ -10,10 +10,15 @@
 <body>
     <div class="container" style="background-image: url('./images/bg.png');">
     </div>
-    <div class="overlay" >
+
+    <button class="button_main_show" data-show-advertisment>
+        Show advertisment
+    </button>
+
+    <div class="overlay is-hidden" data-overlay>
         <img class="cup" src="./images/cup_with_gradient.png" alt="cup">
         <img class="confeti" src="./images/confeti_full.png" alt="confeti">
-        <img class="left_image" src="./images/left_image.png" alt="left_image">
+        <!-- <img class="left_image" src="./images/left_image.png" alt="left_image"> -->
         <!-- <img class="right_image" src="./images/right_image.png" alt="right_image"> -->
 
         <button class="button_additional_plus">
@@ -26,9 +31,10 @@
             <img src="./images/icon_additional_play1.png" alt="icon">
         </button>
 
-        <button class="button_main_close">
+        <button class="button_main_close" data-close-advertisment>
             <img src="./images/icon_main1.png" alt="icon">
         </button>
     </div>
+    <script src="./app.js"></script>
 </body>
 </html>
