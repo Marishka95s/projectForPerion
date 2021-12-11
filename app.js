@@ -21,5 +21,7 @@ function openAdvertisment() {
   overlay.classList.remove("is-hidden")
 
   // Main functionality of advertisment:
-  
+  setTimeout(() => {
+    console.log("hallo again");
+  }, 2000);
 }
