@@ -93,8 +93,29 @@ body {
     transition-delay: 6000ms;
   }
 
-  .overlay.animated .text {
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 27vh;
+    font-size: 26vh;
+    line-height: 19vh;
+    font-weight: bold;
+    color: white;
+  }
+  .text-item {
     z-index: 6;
+  }
+  .text-item:nth-child(2n) {
+    font-size: 18.5vh;
+  }
+  .text-item:nth-child(3n) {
+    font-size: 10.5vh;
+    line-height: 8vh;
+  }
+  .overlay.animated .text {
+    opacity: 1;
   }
   .overlay.animated .left_emblema {
     z-index: 6;
