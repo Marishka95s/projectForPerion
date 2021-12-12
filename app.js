@@ -15,13 +15,15 @@ closeAdvertismentBtn.addEventListener('click', closeAdvertisment)
 function closeAdvertisment() {
   console.log('close click')
   overlay.classList.add("is-hidden")
+  overlay.classList.remove('animated')
 }
 function openAdvertisment() {
   console.log('open click')
   overlay.classList.remove("is-hidden")
+  overlay.classList.add('animated')
 
   // Main functionality of advertisment:
   setTimeout(() => {
     console.log("hallo again");
-  }, 2000);
+  }, 0);
 }

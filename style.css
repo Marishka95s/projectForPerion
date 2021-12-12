@@ -4,11 +4,12 @@
 
 body {
     font-family: 'Muli', sans-serif;
-    /* overflow: hidden; */
+    overflow: hidden;
     margin: 0 auto;
     height: 1050px;
     width: 2000px;
     background: #000;
+    text-align: center;
   }
   .container {
     position: absolute;
@@ -23,6 +24,7 @@ body {
 
   .overlay {
     position: absolute;
+      /* overflow: hidden; */
     top: 0;
     left: 0;
     height: 100vh;
@@ -39,68 +41,107 @@ body {
     width: 100%;
     height: auto;
     position: absolute;
+    top: 0;
+    left: 0;
+    /* transition: transform 2000ms cubic-bezier(0.4, 0, 0.2, 1); */
   }
+
   .cup{
     z-index: 1;
+    transform: translateY(100%);
+  }
+  .overlay.animated .cup{
+    transform: translateY(0);   
+    transition-property: transform;
+    transition-duration: 4000ms;   
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .confeti{
     z-index: 2;
+    transform: translateY(100%);
   }
-
-  .bg2 {
-    z-index: 3;
+  .overlay.animated .confeti{
+    transform: translateY(-25%);
+    transition-property: transform;
+    transition-duration: 3000ms;   
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 3000ms;
   }
-  .button_open{
-    z-index: 4;
-  }
-  .video{
-    z-index: 4;
-  }
-  .button_close{
-    z-index: 4;
-}
 
   .left_image{
     z-index: 5;
+    transform: translateX(-100%);
+  }
+  .overlay.animated .left_image{
+    transform: translateX(0);
+    transition-property: transform;
+    transition-duration: 3000ms;   
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 6000ms;
   }
   .right_image{
     z-index: 5;
+    transform: translateX(100%);
+  }
+  .overlay.animated .right_image{
+    transform: translateX(0);
+    transition-property: transform;
+    transition-duration: 3000ms;   
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-delay: 6000ms;
   }
 
-  .text {
+  .overlay.animated .text {
     z-index: 6;
   }
-  .left_emblema {
+  .overlay.animated .left_emblema {
     z-index: 6;
   }
-  .right-emblema {
+  .overlay.animated .right-emblema {
     z-index: 6;
   }
-  .button_main_show{
-    z-index: 7;
-    display: block;
-    position: absolute;
-    border: none;
-    /* background-color: transparent; */
-    left: 0;
-    top: 0;
-    width: 5vw;
-    height: 5vw;
+
+  .overlay.animated .bg2 {
+    z-index: 3;
+    /* opacity: 1;
+    transform: translateY(0);
+    transition-delay: 5000ms; */
   }
-  .button_main_close {
-    z-index: 7;
+
+  .button {
     display: block;
     position: absolute;
     border: none;
     background-color: transparent;
+  }
+
+  .overlay.animated .button_open{
+    z-index: 4;
+  }
+  .overlay.animated .video{
+    z-index: 4;
+  }
+  .overlay.animated .button_close{
+    z-index: 4;
+  }
+
+  .button_main_show{
+    z-index: 7;
+    left: 0;
+    top: 0;
+    width: 5vw;
+    height: 5vw;
+    font-size: 2vh;
+  }
+  .overlay.animated .button_main_close {
+    z-index: 7;    
     right: 0;
     top: -0.1vw;
     width: 3vw;
     height: 3vw;
   }
-  .button_main img{
+  /* .button_main_close img{
     width: 100%;
     display: block;
-
-}
+} */
