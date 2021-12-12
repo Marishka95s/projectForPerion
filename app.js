@@ -1,32 +1,47 @@
 const openAdvertismentBtn = document.querySelector("[data-show-advertisment]")
 const closeAdvertismentBtn = document.querySelector("[data-close-advertisment]")
 const overlay = document.querySelector("[data-overlay]")
-const openBtn = document.querySelector(".button_main_show")
+
+
+const showVideoBtn = document.querySelector('.button_additional_plus')
+const startVideoBtn = document.querySelector('.button_additional_play')
+const stopVideoBtn = document.querySelector('.button_additional_close') 
+const video = document.querySelector('.video')
 
 setTimeout(() => {
     openAdvertisment()
-    console.log("opened");
   }, 1000);
-console.log(closeAdvertismentBtn)
-console.log(overlay)
 
 openAdvertismentBtn.addEventListener('click', openAdvertisment)
 closeAdvertismentBtn.addEventListener('click', closeAdvertisment)
 
+showVideoBtn.addEventListener('click', showVideo)
+startVideoBtn.addEventListener('click', startVideo)
+stopVideoBtn.addEventListener('click', stopVideo)
+
 function closeAdvertisment() {
-  console.log('close click')
   overlay.classList.add("is-hidden")
   overlay.classList.remove('animated')
-  openBtn.classList.remove("is-hidden")
+  openAdvertismentBtn.classList.remove("is-hidden")
 }
 function openAdvertisment() {
-  console.log('open click')
   overlay.classList.remove("is-hidden")
   overlay.classList.add('animated')
-  openBtn.classList.add("is-hidden")
+  openAdvertismentBtn.classList.add("is-hidden")
+}
 
-  // Main functionality of advertisment:
-  setTimeout(() => {
-    console.log("hallo again");
-  }, 0);
+function showVideo() {
+  video.classList.add("is-hidden")
+  // overlay.classList.remove('animated')
+  // openAdvertismentBtn.classList.remove("is-hidden")
+}
+function startVideo() {
+  // overlay.classList.add("is-hidden")
+  // overlay.classList.remove('animated')
+  // openAdvertismentBtn.classList.remove("is-hidden")
+}
+function stopVideo() {
+  // overlay.classList.add("is-hidden")
+  // overlay.classList.remove('animated')
+  // openAdvertismentBtn.classList.remove("is-hidden")
 }
