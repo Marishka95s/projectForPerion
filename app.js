@@ -6,7 +6,7 @@ const openBtn = document.querySelector(".button_main_show")
 setTimeout(() => {
     openAdvertisment()
     console.log("opened");
-  }, 2000);
+  }, 1000);
 console.log(closeAdvertismentBtn)
 console.log(overlay)
 

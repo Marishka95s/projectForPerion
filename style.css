@@ -3,13 +3,14 @@
   }
 
 body {
-    font-family: 'Muli', sans-serif;
+    /* font-family: 'Muli', sans-serif; */
     overflow: hidden;
     margin: 0 auto;
     height: 1050px;
     width: 2000px;
     background: #000;
     text-align: center;
+    font-family: 'DIN Next Rounded LT Pro', sans-serif;
   }
   .container {
     position: absolute;
@@ -52,9 +53,7 @@ body {
   }
   .overlay.animated .cup{
     transform: translateY(0);   
-    transition-property: transform;
-    transition-duration: 4000ms;   
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 4000ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .confeti{
@@ -64,10 +63,7 @@ body {
   }
   .overlay.animated .confeti{
     transform: translateY(-12%);
-    transition-property: transform;
-    transition-duration: 4000ms;   
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-delay: 2600ms;
+    transition: transform 4000ms 2000ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .left_image{
@@ -75,22 +71,43 @@ body {
     transform: translateX(-100%);
   }
   .overlay.animated .left_image{
-    transform: translateX(0);
-    transition-property: transform;
-    transition-duration: 3000ms;   
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-delay: 6000ms;
+    animation: left-image 12000ms cubic-bezier(0.4, 0, 0.2, 1) 4000ms;
   }
+  @keyframes left-image {
+    0%{
+      transform: translateX(-100%);
+    }
+    20%{
+      transform: translateX(0)
+    }
+    60%{
+      transform: translateX(0)
+    }
+    100%{
+      transform: translateX(-100%);
+    }
+  }
+  
   .right_image{
     z-index: 5;
     transform: translateX(100%);
   }
   .overlay.animated .right_image{
-    transform: translateX(0);
-    transition-property: transform;
-    transition-duration: 3000ms;   
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-delay: 6000ms;
+    animation: right-image 12000ms cubic-bezier(0.4, 0, 0.2, 1) 4000ms;
+  }
+  @keyframes right-image {
+    0%{
+      transform: translateX(100%);
+    }
+    20%{
+      transform: translateX(0)
+    }
+    60%{
+      transform: translateX(0)
+    }
+    100%{
+      transform: translateX(100%);
+    }
   }
 
   .text {
@@ -99,29 +116,47 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 27vh;
-    font-size: 26vh;
+    font-size: 25vh;
     line-height: 19vh;
-    font-weight: bold;
+    font-weight: 900;
     color: white;
   }
   .text-item {
     z-index: 6;
     opacity: 0;
+    /* transition: opacity 2500ms 6000ms cubic-bezier(0.4, 0, 0.2, 1); */
   }
   .text-item:nth-child(2n) {
-    font-size: 18.5vh;
+    font-size: 18vh;
   }
   .text-item:nth-child(3n) {
-    font-size: 10.5vh;
-    line-height: 8vh;
+    font-size: 10vh;
+    line-height: 9vh;
   }
   .overlay.animated .text-item {
-    opacity: 1;
-    transition-property: opacity;
-    transition-duration: 3000ms;   
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-delay: 8000ms;
+    animation: text-item 8000ms cubic-bezier(0.4, 0, 0.2, 1) 6000ms;
   }
+  .overlay.animated .text-item:nth-child(2n) {
+    animation: text-item 6750ms cubic-bezier(0.4, 0, 0.2, 1) 7000ms;
+  }
+  .overlay.animated .text-item:nth-child(3n) {
+    animation: text-item 5000ms cubic-bezier(0.4, 0, 0.2, 1) 8000ms;
+  }
+  @keyframes text-item {
+    0%{
+      opacity: 0;
+    }
+    25%{
+      opacity: 1;
+    }
+    60%{
+      opacity: 1;
+    }
+    90%{
+      opacity: 0;
+    }
+  }
+
   .overlay.animated .left_emblema {
     z-index: 6;
   }
@@ -129,11 +164,13 @@ body {
     z-index: 6;
   }
 
-  .overlay.animated .bg2 {
+  .bg2_image {
     z-index: 3;
-    /* opacity: 1;
-    transform: translateY(0);
-    transition-delay: 5000ms; */
+    opacity: 0;
+  }
+  .overlay.animated .bg2_image {
+    opacity: 1;
+    transition: opacity 2500ms 6000ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .button {
@@ -165,6 +202,9 @@ body {
   .button_main_show.is-hidden{
     opacity: 0;
     pointer-events: none;
+    transition-property: opacity;
+    transition-duration: 1000ms;   
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   .button_main_close {
     z-index: 7;    
@@ -174,12 +214,11 @@ body {
     height: 3vw;
 
     opacity: 0;
-    pointer-events: none;
   }
   .overlay.animated .button_main_close {
     opacity: 1;
     transition-property: opacity;
-    transition-duration: 3000ms;   
+    transition-duration: 2000ms;   
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   /* .button_main_close img{
