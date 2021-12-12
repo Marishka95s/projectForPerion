@@ -59,14 +59,15 @@ body {
 
   .confeti{
     z-index: 2;
+    height: 100%;
     transform: translateY(100%);
   }
   .overlay.animated .confeti{
-    transform: translateY(-25%);
+    transform: translateY(-12%);
     transition-property: transform;
-    transition-duration: 3000ms;   
+    transition-duration: 4000ms;   
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-delay: 3000ms;
+    transition-delay: 2600ms;
   }
 
   .left_image{
@@ -128,18 +129,32 @@ body {
 
   .button_main_show{
     z-index: 7;
-    left: 0;
-    top: 0;
-    width: 5vw;
-    height: 5vw;
+    right: 2vh;
+    top: 2vh;
+    padding: 2vh;
     font-size: 2vh;
+    opacity: 1;
+    border: 1px double black ;
   }
-  .overlay.animated .button_main_close {
+  .button_main_show.is-hidden{
+    opacity: 0;
+    pointer-events: none;
+  }
+  .button_main_close {
     z-index: 7;    
     right: 0;
     top: -0.1vw;
     width: 3vw;
     height: 3vw;
+
+    opacity: 0;
+    pointer-events: none;
+  }
+  .overlay.animated .button_main_close {
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 3000ms;   
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
   /* .button_main_close img{
     width: 100%;
