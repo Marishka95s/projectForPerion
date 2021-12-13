@@ -38,14 +38,20 @@ function showVideo() {
   showVideoBtn.classList.remove("showed-again")
   stopVideoBtn.classList.add("showed")
 }
-function startVideo() {
-  // overlay.classList.add("is-hidden")
-  // overlay.classList.remove('animated')
-  // openAdvertismentBtn.classList.remove("is-hidden")
+function startVideo() {   
+  if (video.paused) {
+    startVideoBtn.classList.add("hidden")
+    video.play();    
+  } else {
+    video.pause();
+    startVideoBtn.classList.remove("hidden")
+    video.load();
+  }
 }
 function stopVideo() {
   video.classList.remove("opened")
   startVideoBtn.classList.remove("showed")
   stopVideoBtn.classList.remove("showed")
   showVideoBtn.classList.add("showed-again")
+  video.pause()
 }
