@@ -3,10 +3,10 @@ const closeAdvertismentBtn = document.querySelector("[data-close-advertisment]")
 const overlay = document.querySelector("[data-overlay]")
 
 
-const showVideoBtn = document.querySelector('.button_additional_plus')
+const showVideoBtn = document.querySelector('.button_additional_show')
 const startVideoBtn = document.querySelector('.button_additional_play')
 const stopVideoBtn = document.querySelector('.button_additional_close') 
-const video = document.querySelector('.video')
+const video = document.querySelector('video')
 
 setTimeout(() => {
     openAdvertisment()
@@ -28,12 +28,15 @@ function openAdvertisment() {
   overlay.classList.remove("is-hidden")
   overlay.classList.add('animated')
   openAdvertismentBtn.classList.add("is-hidden")
+  showVideoBtn.classList.add("showed")
 }
 
 function showVideo() {
-  video.classList.add("is-hidden")
-  // overlay.classList.remove('animated')
-  // openAdvertismentBtn.classList.remove("is-hidden")
+  video.classList.add("opened")
+  startVideoBtn.classList.add("showed")
+  showVideoBtn.classList.remove("showed")
+  showVideoBtn.classList.remove("showed-again")
+  stopVideoBtn.classList.add("showed")
 }
 function startVideo() {
   // overlay.classList.add("is-hidden")
@@ -41,7 +44,8 @@ function startVideo() {
   // openAdvertismentBtn.classList.remove("is-hidden")
 }
 function stopVideo() {
-  // overlay.classList.add("is-hidden")
-  // overlay.classList.remove('animated')
-  // openAdvertismentBtn.classList.remove("is-hidden")
+  video.classList.remove("opened")
+  startVideoBtn.classList.remove("showed")
+  stopVideoBtn.classList.remove("showed")
+  showVideoBtn.classList.add("showed-again")
 }
